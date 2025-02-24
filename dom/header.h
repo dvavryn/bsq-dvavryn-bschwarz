@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:16:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 16:30:43 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:39:03 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_line_len(char *str);
 
 // void f
 void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 
 
 /*	funtion prototypes end*/

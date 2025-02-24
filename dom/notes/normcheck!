@@ -1,2 +1,4 @@
 ft_atoi.c: 		OK!
 ft_line_len.c: 	OK!
+ft_putnbr.c:	OK!
+ft_putstr.c:	OK!
