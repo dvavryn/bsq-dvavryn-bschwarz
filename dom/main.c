@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:10:35 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 16:35:36 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 17:36:50 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct map_description
 #define BUF_MAX 1024
 
 int ft_line_len(char *str);
+void ft_print_(char *first_line, char *buffer, int map, int bytes_read);
 
 
 int main (int argc, char **argv)
@@ -42,13 +43,32 @@ int main (int argc, char **argv)
 	int bytes_read;
 	bytes_read = read(map, buffer, sizeof(buffer) - 1);
 
-	//ft_putstr("in map: %i, %i bytes read!\nbuffer:\n%s\n", map, bytes_read, buffer);
-	//ft_putstr("first line len: %i", ft_line_len(buffer));
-	const char *a = "123456";
-	int x = ft_atoi(a);
-	ft_putstr("%i", x);
 
+	char *first_line;
+	first_line = (char *)malloc(ft_first_line_len(buffer)*sizeof(char));
+	ft_strncpy(first_line, buffer, ft_first_line_len(buffer));
+
+
+
+	ft_print_(first_line, buffer, map, bytes_read);
 
 	close(map);
 	//ft_putstr("Map closed!\n");
+}
+
+void ft_print_(char *first_line, char *buffer, int map, int bytes_read)
+{
+	ft_putstr("in map: ");
+	ft_putnbr(map);
+	ft_putstr("\n");
+	ft_putnbr(bytes_read);
+	ft_putstr(" bytes read!\nbuffer:\n");
+	ft_putstr(buffer);
+	ft_putstr("\n");
+	ft_putstr("first line len: ");
+	ft_putnbr(ft_line_len(buffer));
+	ft_putstr("\n");
+	ft_putstr("first line: ");
+	ft_putstr(first_line);
+	ft_putstr("\n");
 }
