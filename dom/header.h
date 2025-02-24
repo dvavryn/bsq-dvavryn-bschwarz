@@ -6,12 +6,15 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:16:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 18:19:11 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:47:32 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
+
+// BUFF_MAX -> 1024
+# define BUFF_MAX 1024
 
 //	open
 # include <fcntl.h>
@@ -25,6 +28,16 @@
 # include <stdio.h>
 /*	ILLEGAL!!!! */
 
+
+/*	typedef struct*/
+typedef struct values
+{
+	int heigth;
+	char empty;
+	char obstacle;
+	char full;
+}	map_des;
+/*	typedef struct end*/
 
 /*	function prototypes */
 int		ft_atoi(char *str);
