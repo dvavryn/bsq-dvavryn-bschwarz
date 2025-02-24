@@ -1,0 +1,5 @@
+open, close, read, write, malloc, free, exit
+makefile!!!
+
+perl map_perl.pl "width" "height" "density"
+--> map 10 10 2
