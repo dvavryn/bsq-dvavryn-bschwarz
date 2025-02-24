@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:10:35 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 16:16:03 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:32:34 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main (int argc, char **argv)
 	map = open(filename, O_RDONLY);
 	if (map == -1)
 		printf("Map couldnt be opened!\n");
-	printf("Map opened sucessfully!\n");
+	//printf("Map opened sucessfully!\n");
 
 	char buffer[BUF_MAX];
 	int bytes_read;
@@ -44,9 +44,11 @@ int main (int argc, char **argv)
 
 	//printf("in map: %i, %i bytes read!\nbuffer:\n%s\n", map, bytes_read, buffer);
 	//printf("first line len: %i", ft_line_len(buffer));
-
+	const char *a = "123456";
+	int x = ft_atoi(a);
+	printf("%i", x);
 
 
 	close(map);
-	printf("Map closed!\n");
+	//printf("Map closed!\n");
 }

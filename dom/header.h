@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:16:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 16:16:55 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:30:43 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@
 
 
 /*	function prototypes */
-//	ft_atoi.c
-int	ft_atoi(const char *str);
-int	ft_line_len(char *str);
+// int f
+int		ft_atoi(const char *str);
+int		ft_line_len(char *str);
+// char f
+
+// void f
+void	ft_putstr(char *str);
+
 
 /*	funtion prototypes end*/
 #endif
