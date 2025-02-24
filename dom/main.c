@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:10:35 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 17:36:50 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:07:11 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,47 +28,43 @@ void ft_print_(char *first_line, char *buffer, int map, int bytes_read);
 
 int main (int argc, char **argv)
 {
+	// CHECK args - if 1 -> usage || if 2 -> open filename!
 	if (argc == 1)
+	{
 		ft_putstr("USAGE: ./bsq \"FILENAME\"");
+		return (-1);
+	}
 	if (argc != 2)
 		return (-1);
+	
 	char *filename = argv[1];
+	
+	// OPEN file
 	int map = 0;
 	map = open(filename, O_RDONLY);
 	if (map == -1)
-		ft_putstr("Map couldnt be opened!\n");
-	//ft_putstr("Map opened sucessfully!\n");
+		ft_putstr("Map couldnt be opened!\n"); 
 
+	// CREATE buffer with siez BUF_MAX: 1kB rn
 	char buffer[BUF_MAX];
+	
+	// READ Map from file
 	int bytes_read;
 	bytes_read = read(map, buffer, sizeof(buffer) - 1);
 
-
+	// EXTRACT first line of buffer!
 	char *first_line;
 	first_line = (char *)malloc(ft_first_line_len(buffer)*sizeof(char));
+
 	ft_strncpy(first_line, buffer, ft_first_line_len(buffer));
 
-
-
-	ft_print_(first_line, buffer, map, bytes_read);
-
-	close(map);
-	//ft_putstr("Map closed!\n");
-}
-
-void ft_print_(char *first_line, char *buffer, int map, int bytes_read)
-{
-	ft_putstr("in map: ");
-	ft_putnbr(map);
-	ft_putstr("\n");
-	ft_putnbr(bytes_read);
-	ft_putstr(" bytes read!\nbuffer:\n");
-	ft_putstr(buffer);
-	ft_putstr("\n");
-	ft_putstr("first line len: ");
-	ft_putnbr(ft_line_len(buffer));
-	ft_putstr("\n");
-	ft_putstr("first line: ");
+	//map_des one;
+	//one.height = ??;
+	int a = ft_get_hight(first_line);
+	printf("\nHEIGHT: %i\n", a);
+	
 	ft_putstr(first_line);
-	ft_putstr("\n");
+
+	// CLOSE file
+	close(map);
 }
