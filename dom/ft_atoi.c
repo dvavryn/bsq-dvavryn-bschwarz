@@ -6,25 +6,36 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:00:02 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 16:34:13 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:09:22 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	doesnt check negatives!!*/
-int	ft_atoi(const char *str)
-{
-	int	result;
+#include "header.h"
 
-	result = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
-			|| *str == '\v' || *str == '\f' || *str == '\r'))
-		++str;
-	if (*str == '-' || *str == '+')
-		++str;
-	while (*str && *str >= '0' && *str <= '9')
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	fin;
+	int	neg;
+
+	i = 0;
+	fin = 0;
+	neg = 1;
+	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
+		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
+		i++;
+	while ((str[i] == '-') || (str[i] == '+'))
 	{
-		result = result * 10 + (*str - 48);
-		++str;
+		if (str[i] == '-')
+			neg = neg * -1;
+		i++;
 	}
-	return (result);
+	while (47 < str[i] && str[i] < 58)
+	{
+		fin = fin * 10;
+		fin = fin + (str[i] - '0');
+		i++;
+	}
+	fin = fin * neg;
+	return (fin);
 }
