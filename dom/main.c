@@ -6,13 +6,13 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:10:35 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 15:39:33 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:55:22 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-typedef struct
+typedef struct map_description
 {
 	int height;
 	char empty;
@@ -59,3 +59,5 @@ int ft_line_len(char *str)
 		i++;
 	return (i);
 }
+
+char
