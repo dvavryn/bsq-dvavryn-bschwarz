@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:10:35 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/02/24 15:57:26 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:16:03 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,11 @@ int main (int argc, char **argv)
 	int bytes_read;
 	bytes_read = read(map, buffer, sizeof(buffer) - 1);
 
-	printf("in map: %i, %i bytes read!\nbuffer:\n%s\n", map, bytes_read, buffer);
-	printf("first line len: %i", ft_line_len(buffer));
+	//printf("in map: %i, %i bytes read!\nbuffer:\n%s\n", map, bytes_read, buffer);
+	//printf("first line len: %i", ft_line_len(buffer));
+
 
 
 	close(map);
 	printf("Map closed!\n");
 }
-
-int ft_line_len(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\n')
-		i++;
-	return (i);
-}
-
