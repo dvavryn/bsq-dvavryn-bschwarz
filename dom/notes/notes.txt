@@ -1,0 +1,10 @@
+DEEPSEEK NOTES:
+	-	was ist das für ein script? *.pl 
+		--> perlscript: speichern als *.pl 
+		--> ausführen "perl *.pl <width> <height> <density> 
+		--> alias map="perl gen_map.pl 15 15 2
+
+	-	
+
+CHAT-GPT NOTES:
+
